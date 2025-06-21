@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>NotebookLM语音播客</title>
+    <link>https://zhxianlucky.github.io/notebooklm-podcast/</link>
+    <description>由NotebookLM生成内容并转语音</description>
+    <language>zh-cn</language>
+
+    <item>
+      <title>ReflAct: Goal-State Reflection for LLM Agents</title>
+      <enclosure url="https://zhxianlucky.github.io/notebooklm-podcast/ReflAct_%20Goal-State%20Reflection%20for%20LLM%20Agents.wav" type="audio/wav" length="12345678"/>
+      <guid>reflact-episode-1</guid>
+      <pubDate>Sat, 21 Jun 2025 12:00:00 GMT</pubDate>
+      <description>NotebookLM生成的第一期反思播客</description>
+    </item>
+  </channel>
+</rss>
