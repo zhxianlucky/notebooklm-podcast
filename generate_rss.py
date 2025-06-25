@@ -1,9 +1,12 @@
 import os
 import requests
+import subprocess
 import xml.etree.ElementTree as ET
-from pydub import AudioSegment
+# from pydub import AudioSegment
 from datetime import datetime
 from email.utils import format_datetime
+from mutagen.mp3 import MP3
+from slugify import slugify  # 可选：确保文件名合法
 
 AUDIO_INPUT = "input"
 AUDIO_OUTPUT = "output"
@@ -28,18 +31,36 @@ def convert_and_generate_items():
     for fname in sorted(os.listdir(AUDIO_INPUT)):
         if not fname.endswith(".wav"):
             continue
+
         arxiv_id = os.path.splitext(fname)[0]
         title, summary, guid = fetch_arxiv_metadata(arxiv_id)
-        mp3_name = title.replace(" ", "_") + ".mp3"
+
+        safe_title = slugify(title)  # 确保生成安全文件名
+        mp3_name = f"{safe_title}.mp3"
 
         wav_path = os.path.join(AUDIO_INPUT, fname)
         mp3_path = os.path.join(AUDIO_OUTPUT, mp3_name)
 
-        sound = AudioSegment.from_wav(wav_path)
-        sound.export(mp3_path, format="mp3", bitrate="128k")
+        print(f"🎧 正在转换: {fname} → {mp3_name}")
+        result = subprocess.run([
+            "ffmpeg", "-y", "-i", wav_path,
+            "-codec:a", "libmp3lame", "-b:a", "128k", mp3_path
+        ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
-        file_size = os.path.getsize(mp3_path)
-        duration = f"{int(sound.duration_seconds) // 60}:{int(sound.duration_seconds) % 60:02d}"
+        if result.returncode != 0:
+            print(f"❌ ffmpeg 转码失败: {result.stderr}")
+            continue
+
+        # 获取文件大小和时长
+        try:
+            file_size = os.path.getsize(mp3_path)
+            mp3_info = MP3(mp3_path)
+            duration_sec = int(mp3_info.info.length)
+            duration = f"{duration_sec // 60}:{duration_sec % 60:02d}"
+        except Exception as e:
+            print(f"❌ 无法获取 MP3 信息: {e}")
+            continue
+
         pub_date = format_datetime(datetime.utcnow())
 
         item = f"""
@@ -53,6 +74,7 @@ def convert_and_generate_items():
         </item>
         """
         items.append(item)
+        print(f"✅ 已生成 RSS 条目：{title}")
     return items
 
 def generate_rss():
