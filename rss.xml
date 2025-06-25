@@ -4,23 +4,21 @@
      xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>NotebookLM语音播客</title>
-    <link>https://zhxianlucky.github.io/notebooklm-podcast/</link>
-    <description>由NotebookLM生成内容并转语音</description>
+    <link>https://zhxianlucky.github.io/notebooklm-podcast</link>
+    <description>NotebookLM自动生成音频播客</description>
     <language>zh-cn</language>
     <itunes:author>zhxianlucky</itunes:author>
     <itunes:explicit>no</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-
-    <item>
-      <title>ReflAct: Goal-State Reflection for LLM Agents</title>
-      <enclosure 
-         url="https://zhxianlucky.github.io/notebooklm-podcast/ReflAct_Reflection.mp3" 
-         type="audio/mpeg" 
-         length="14733356"/>
-      <guid isPermaLink="false">reflact-episode-1</guid>
-      <pubDate>Sat, 21 Jun 2025 12:00:00 GMT</pubDate>
-      <description>NotebookLM生成的第一期反思播客</description>
-      <itunes:duration>15:20</itunes:duration>
-    </item>
+    
+        <item>
+          <title>Drag-and-Drop LLMs_ Zero-Shot Prompt-to-Weights</title>
+          <enclosure url="https://zhxianlucky.github.io/notebooklm-podcast/output/Drag-and-Drop_LLMs__Zero-Shot_Prompt-to-Weights.mp3" length="14916524" type="audio/mpeg"/>
+          <guid></guid>
+          <pubDate>Wed, 25 Jun 2025 00:03:30 -0000</pubDate>
+          <description>arXiv metadata fetch failed.</description>
+          <itunes:duration>15:32</itunes:duration>
+        </item>
+        
   </channel>
 </rss>
