@@ -1,0 +1,10 @@
+# Ignore all WAV files in input folder
+input/*.wav
+
+# Bytecode & cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
