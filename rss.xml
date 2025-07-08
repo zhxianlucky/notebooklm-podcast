@@ -15,7 +15,7 @@
           <title>ReflAct: World-Grounded Decision Making in LLM Agents via Goal-State   Reflection</title>
           <enclosure url="https://zhxianlucky.github.io/notebooklm-podcast/output/reflact-world-grounded-decision-making-in-llm-agents-via-goal-state-reflection.mp3" length="14733356" type="audio/mpeg"/>
           <guid>2505.15182</guid>
-          <pubDate>Wed, 25 Jun 2025 12:29:21 -0000</pubDate>
+          <pubDate>Tue, 08 Jul 2025 03:03:44 -0000</pubDate>
           <description>Recent advances in LLM agents have largely built on reasoning backbones like ReAct, which interleave thought and action in complex environments. However, ReAct often produces ungrounded or incoherent reasoning steps, leading to misalignment between the agent's actual state and goal. Our analysis finds that this stems from ReAct's inability to maintain consistent internal beliefs and goal alignment, causing compounding errors and hallucinations. To address this, we introduce ReflAct, a novel backbone that shifts reasoning from merely planning next actions to continuously reflecting on the agent's state relative to its goal. By explicitly grounding decisions in states and enforcing ongoing goal alignment, ReflAct dramatically improves strategic reliability. This design delivers substantial empirical gains: ReflAct surpasses ReAct by 27.7% on average, achieving a 93.3% success rate in ALFWorld. Notably, ReflAct even outperforms ReAct with added enhancement modules (e.g., Reflexion, WKM), showing that strengthening the core reasoning backbone is key to reliable agent performance.</description>
           <itunes:duration>15:20</itunes:duration>
         </item>
@@ -24,9 +24,18 @@
           <title>Drag-and-Drop LLMs: Zero-Shot Prompt-to-Weights</title>
           <enclosure url="https://zhxianlucky.github.io/notebooklm-podcast/output/drag-and-drop-llms-zero-shot-prompt-to-weights.mp3" length="14916524" type="audio/mpeg"/>
           <guid>2506.16406</guid>
-          <pubDate>Wed, 25 Jun 2025 12:29:25 -0000</pubDate>
+          <pubDate>Tue, 08 Jul 2025 03:03:54 -0000</pubDate>
           <description>Modern Parameter-Efficient Fine-Tuning (PEFT) methods such as low-rank adaptation (LoRA) reduce the cost of customizing large language models (LLMs), yet still require a separate optimization run for every downstream dataset. We introduce \textbf{Drag-and-Drop LLMs (\textit{DnD})}, a prompt-conditioned parameter generator that eliminates per-task training by mapping a handful of unlabeled task prompts directly to LoRA weight updates. A lightweight text encoder distills each prompt batch into condition embeddings, which are then transformed by a cascaded hyper-convolutional decoder into the full set of LoRA matrices. Once trained in a diverse collection of prompt-checkpoint pairs, DnD produces task-specific parameters in seconds, yielding i) up to \textbf{12,000$\times$} lower overhead than full fine-tuning, ii) average gains up to \textbf{30\%} in performance over the strongest training LoRAs on unseen common-sense reasoning, math, coding, and multimodal benchmarks, and iii) robust cross-domain generalization despite never seeing the target data or labels. Our results demonstrate that prompt-conditioned parameter generation is a viable alternative to gradient-based adaptation for rapidly specializing LLMs. Our project is available at \href{https://jerryliang24.github.io/DnD}{https://jerryliang24.github.io/DnD}.</description>
           <itunes:duration>15:32</itunes:duration>
+        </item>
+        
+        <item>
+          <title>Hierarchical Reasoning Model</title>
+          <enclosure url="https://zhxianlucky.github.io/notebooklm-podcast/output/hierarchical-reasoning-model.mp3" length="8393132" type="audio/mpeg"/>
+          <guid>2506.21734</guid>
+          <pubDate>Tue, 08 Jul 2025 03:04:05 -0000</pubDate>
+          <description>Reasoning, the process of devising and executing complex goal-oriented action sequences, remains a critical challenge in AI. Current large language models (LLMs) primarily employ Chain-of-Thought (CoT) techniques, which suffer from brittle task decomposition, extensive data requirements, and high latency. Inspired by the hierarchical and multi-timescale processing in the human brain, we propose the Hierarchical Reasoning Model (HRM), a novel recurrent architecture that attains significant computational depth while maintaining both training stability and efficiency. HRM executes sequential reasoning tasks in a single forward pass without explicit supervision of the intermediate process, through two interdependent recurrent modules: a high-level module responsible for slow, abstract planning, and a low-level module handling rapid, detailed computations. With only 27 million parameters, HRM achieves exceptional performance on complex reasoning tasks using only 1000 training samples. The model operates without pre-training or CoT data, yet achieves nearly perfect performance on challenging tasks including complex Sudoku puzzles and optimal path finding in large mazes. Furthermore, HRM outperforms much larger models with significantly longer context windows on the Abstraction and Reasoning Corpus (ARC), a key benchmark for measuring artificial general intelligence capabilities. These results underscore HRM's potential as a transformative advancement toward universal computation and general-purpose reasoning systems.</description>
+          <itunes:duration>8:44</itunes:duration>
         </item>
         
   </channel>
